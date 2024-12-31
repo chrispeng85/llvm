@@ -1,0 +1,26 @@
+[package]
+name = "rust-llvm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+inkwell = {git = "https://github.comm/TheDan64/inkwell", branch = "master", features = ["llvm14-0"]}
+llvm-sys = "140"
+libc = "0.2"
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.9"
+
+[build-dependencies]
+bindgen = "0.59"
+cmake = "0.1"
+
+[lib]
+name = "rust-llvm"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-llvm"
+path = "src/main.rs"
+
